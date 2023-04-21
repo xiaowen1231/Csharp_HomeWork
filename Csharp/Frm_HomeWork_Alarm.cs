@@ -28,7 +28,7 @@ namespace Csharp
                 txtS.Text == DateTime.Now.ToString("ss"))
             {
                 SoundPlayer sd = new SoundPlayer();
-                sd.SoundLocation = "C:\\Users\\shiao\\Desktop\\Xiao\\Frm_HomeWork\\Csharp\\Resources\\ring.wav";
+                sd.SoundLocation = @"..\..\\Resources\\ring.wav";
                 sd.Play();
             }
         }
