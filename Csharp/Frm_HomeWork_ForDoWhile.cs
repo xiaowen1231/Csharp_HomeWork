@@ -17,8 +17,6 @@ namespace Csharp
         {
             InitializeComponent();
         }
-        int max = int.MinValue;
-        int min = int.MaxValue;
         private void button1_Click(object sender, EventArgs e)
         {
             if (int.TryParse(txtNum.Text, out int answer))
@@ -203,6 +201,8 @@ namespace Csharp
               
             }
         }
+        int max = int.MinValue;
+        int min = int.MaxValue;
 
         private void button13_Click(object sender, EventArgs e)
         {
@@ -331,7 +331,7 @@ namespace Csharp
             }
             int Total = Num.Sum();
 
-            labAnswer.Text = From + " 到 " + To + " 相隔 " + (Step) + " 加總為 " + Total;
+            labAnswer.Text = From + " 到 " + To + " 相隔 " + ((Step) - 1) + " 加總為 " + Total;
 
         }
 
@@ -364,7 +364,7 @@ namespace Csharp
             }
             int Total = Num.Sum();
 
-            labAnswer.Text = From + " 到 " + To + " 相隔 " + (Step) + " 加總為 " + Total;
+            labAnswer.Text = From + " 到 " + To + " 相隔 " + ((Step) - 1) + " 加總為 " + Total;
         }
 
         private void button18_Click(object sender, EventArgs e)
@@ -396,7 +396,7 @@ namespace Csharp
             } while (i <= To);
 
             int Total = Num.Sum();
-            labAnswer.Text = From + " 到 " + To + " 相隔 " + Step + " 加總為 " + Total;
+            labAnswer.Text = From + " 到 " + To + " 相隔 " + ((Step)-1) + " 加總為 " + Total;
         }
     }
 }
