@@ -45,7 +45,6 @@ namespace Csharp
         {
             Student sd;
             Random rnd = new Random(Guid.NewGuid().GetHashCode());
-            ListViewItem lv = new ListViewItem();
 
             string highestSubject = "";
             string lowestSubject = "";
@@ -53,9 +52,6 @@ namespace Csharp
             sd.ChineseScore = sd.EnglishScore = sd.MathScore = 0;
 
             id++;
-            string name = id.ToString();
-            lv.Text = name;
-
             int chineseScore = rnd.Next(0, 100);
             int englishScore = rnd.Next(0, 100);
             int mathScore = rnd.Next(0, 100);
@@ -96,6 +92,7 @@ namespace Csharp
                 lowestSubject = "數學" + lowestScore;
             }
 
+            ListViewItem lv = new ListViewItem(id.ToString());
             lv.SubItems.Add(chineseScore.ToString());
             lv.SubItems.Add(englishScore.ToString());
             lv.SubItems.Add(mathScore.ToString());
