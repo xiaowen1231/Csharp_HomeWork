@@ -170,7 +170,7 @@ namespace Csharp
             }
             labAnswer.Text = $"int 陣列 arr0711[ 1, 5, 6, 8, 7, 97, 54, 887, 65, 578 ]\n加總為 : {result}";
         }
-
+        int max = int.MinValue;
         private void button12_Click(object sender, EventArgs e)
         {
             int[] arr = { 1, 5, 6, 8, 7, 97, 54, 887, 65, 578 };
@@ -201,7 +201,7 @@ namespace Csharp
               
             }
         }
-        int max = int.MinValue;
+        
         int min = int.MaxValue;
 
         private void button13_Click(object sender, EventArgs e)
