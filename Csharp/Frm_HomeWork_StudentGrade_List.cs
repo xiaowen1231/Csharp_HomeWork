@@ -29,7 +29,7 @@ namespace Csharp
             public int LowestSubject;
         }
         int id = 0;
-        
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -111,7 +111,7 @@ namespace Csharp
             }
             sd.HighestSubject = HighestScore;
             sd.LowestSubject = LowestScore;
-            
+
             ListViewItem lv = new ListViewItem(txtName.Text);
             sd.Total = int.Parse(txtChinese.Text) + int.Parse(txtEnglish.Text) + int.Parse(txtMath.Text);
             int average = sd.Total / 3;
@@ -222,7 +222,7 @@ namespace Csharp
 
             lvStudentData.Items.Insert(0, lv);
         }
-        
+
         private void btnRemoveAt_Click(object sender, EventArgs e)
         {
             if (id == 0)
@@ -232,7 +232,7 @@ namespace Csharp
             }
             id--;
             lvStudentData.Items.RemoveAt(id);
-            
+
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -243,18 +243,18 @@ namespace Csharp
                 return;
             }
             id = 0;
-             ChScore = 0;
-             EnScore = 0;
-             MaScore = 0;
-             ChMax = int.MinValue;
-             ChMin = int.MaxValue;
-             EnMax = int.MinValue;
-             EnMin = int.MaxValue;
-             MaMax = int.MinValue;
-             MaMin = int.MaxValue;
+            ChScore = 0;
+            EnScore = 0;
+            MaScore = 0;
+            ChMax = int.MinValue;
+            ChMin = int.MaxValue;
+            EnMax = int.MinValue;
+            EnMin = int.MaxValue;
+            MaMax = int.MinValue;
+            MaMin = int.MaxValue;
             avgCh = 0;
-             avgEn = 0;
-             avgMa = 0;
+            avgEn = 0;
+            avgMa = 0;
             lvStudentData.Items.Clear();
             lvTotalShow.Items.Clear();
             lvChShow.Items.Clear();
@@ -330,9 +330,9 @@ namespace Csharp
             lvTotalShow.Items.Add(HighShow);
             lvTotalShow.Items.Add(LowShow);
             btnStatistics.Enabled = false;
-            btnAdd.Enabled= false;
-            btnInsert.Enabled= false;
-            btnRemoveAt.Enabled= false;
+            btnAdd.Enabled = false;
+            btnInsert.Enabled = false;
+            btnRemoveAt.Enabled = false;
         }
         string SerchName;
         int SerchCh;
@@ -342,7 +342,7 @@ namespace Csharp
         int SerchAvg;
         string SerchMax;
         string SerchMin;
-        
+
 
         private void btnSerch_Click(object sender, EventArgs e)
         {
@@ -369,18 +369,18 @@ namespace Csharp
             }
 
             lvChShow.Visible = true;
-            for (int i = 0;i<lvStudentData.Items.Count;i++)
+            for (int i = 0; i < lvStudentData.Items.Count; i++)
             {
                 SerchName = lvStudentData.Items[i].SubItems[0].Text;
                 SerchCh = int.Parse(lvStudentData.Items[i].SubItems[1].Text);
                 SerchEn = int.Parse(lvStudentData.Items[i].SubItems[2].Text);
-                SerchMa= int.Parse(lvStudentData.Items[i].SubItems[3].Text);
-                SerchTotal= int.Parse(lvStudentData.Items[i].SubItems[4].Text);
+                SerchMa = int.Parse(lvStudentData.Items[i].SubItems[3].Text);
+                SerchTotal = int.Parse(lvStudentData.Items[i].SubItems[4].Text);
                 SerchAvg = int.Parse(lvStudentData.Items[i].SubItems[5].Text);
                 SerchMax = lvStudentData.Items[i].SubItems[6].Text;
                 SerchMin = lvStudentData.Items[i].SubItems[7].Text;
 
-                if (int.Parse(txtChLow.Text) <= SerchCh &&SerchCh <= int.Parse(txtChHigh.Text))
+                if (int.Parse(txtChLow.Text) <= SerchCh && SerchCh <= int.Parse(txtChHigh.Text))
                 {
                     ListViewItem list = new ListViewItem(SerchName);
                     list.SubItems.Add(SerchCh.ToString());
@@ -392,7 +392,7 @@ namespace Csharp
                     list.SubItems.Add(SerchMin.ToString());
 
                     lvChShow.Items.Add(list);
-                    
+
                     btnSerch.Enabled = false;
                     btnStatistics.Enabled = false;
 
